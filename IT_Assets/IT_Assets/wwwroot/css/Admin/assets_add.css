@@ -1,0 +1,528 @@
+﻿
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins',sans-serif;
+}
+
+body {
+    height: 100vh;
+    overflow: hidden;
+    width: 100%;
+    background-image: url("/Images/re.png");
+    /* background: linear-gradient(135deg, #2b2d32, #1a202c); */
+}
+
+/* background: linear-gradient(135deg, #71b7e6, #9b59b6); */
+
+/*.body_container {
+    height: 100vh;
+    background-image: url("/Images/re.png");
+}*/
+
+.content-wrapper {
+    background-image: url("/Images/re.png");
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    max-width: 700px;
+    width: 100%;
+    margin: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 25px 30px;
+    border-radius: 5px;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.15);
+}
+
+    .container .title {
+        font-size: 25px;
+        font-weight: bold;
+        position: relative;
+        color: white;
+    }
+
+        .container .title::before {
+            content: "";
+            color: white;
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            height: 3px;
+            width: 30px;
+            border-radius: 5px;
+            background: linear-gradient(135deg, #71b7e6, #9b59b6);
+        }
+
+.content form .user-details {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 20px 0 12px 0;
+}
+
+form .user-details .input-box {
+    margin-bottom: 15px;
+    width: calc(100% / 2 - 20px);
+}
+
+form .input-box span.details {
+    display: block;
+    font-weight: 500;
+    margin-bottom: 5px;
+    color: white;
+}
+
+.user-details .input-box input {
+    height: 45px;
+    width: 100%;
+    outline: none;
+    font-size: 16px;
+    border-radius: 5px;
+    padding-left: 15px;
+    border: 1px solid #ccc;
+    border-bottom-width: 2px;
+    transition: all 0.3s ease;
+}
+
+    .user-details .input-box input:focus,
+    .user-details .input-box input:valid {
+        border-color: #9b59b6;
+    }
+
+form .gender-details .gender-title {
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+}
+
+form .category {
+    display: flex;
+    width: 80%;
+    margin: 14px 0;
+    justify-content: space-between;
+    color: white;
+}
+
+    form .category label {
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+    }
+
+        form .category label .dot {
+            height: 18px;
+            width: 18px;
+            border-radius: 50%;
+            margin-right: 10px;
+            background: #d9d9d9;
+            border: 5px solid transparent;
+            transition: all 0.3s ease;
+        }
+
+#dot-1:checked ~ .category label .one,
+#dot-2:checked ~ .category label .two,
+#dot-3:checked ~ .category label .three,
+#dot-4:checked ~ .category label .four,
+#dot-5:checked ~ .category label .five,
+#dot-6:checked ~ .category label .six,
+#dot-7:checked ~ .category label .seven {
+    background: #9b59b6;
+    border-color: #d9d9d9;
+}
+
+form input[type="radio"] {
+    display: none;
+}
+
+form .button {
+    height: 45px;
+    margin: 35px 0
+}
+
+    form .button input {
+        height: 100%;
+        width: 100%;
+        border-radius: 5px;
+        border: none;
+        color: #fff;
+        font-size: 18px;
+        font-weight: 500;
+        letter-spacing: 1px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        background: linear-gradient(135deg, #71b7e6, #9b59b6);
+    }
+
+        form .button input:hover {
+            /* transform: scale(0.99); */
+            background: linear-gradient(-135deg, #71b7e6, #9b59b6);
+        }
+
+@media(max-width: 584px) {
+    .container {
+        max-width: 100%;
+    }
+
+    form .user-details .input-box {
+        margin-bottom: 15px;
+        width: 100%;
+    }
+
+    form .category {
+        width: 100%;
+    }
+
+    .content form .user-details {
+        max-height: 300px;
+        overflow-y: scroll;
+    }
+
+    .user-details::-webkit-scrollbar {
+        width: 5px;
+    }
+}
+
+@media(max-width: 459px) {
+    .container .content .category {
+        flex-direction: column;
+    }
+}
+
+
+
+
+
+.selectMultiple {
+    width: 100%;
+    position: relative;
+}
+
+    .selectMultiple select {
+        display: none;
+    }
+
+    .selectMultiple > div {
+        position: relative;
+        z-index: 2;
+        padding: 8px 12px 2px 12px;
+        border-radius: 8px;
+        background: #fff;
+        font-size: 14px;
+        min-height: 44px;
+        box-shadow: 0 4px 16px 0 rgba(22, 42, 90, .12);
+        transition: box-shadow 0.3s ease;
+    }
+
+        .selectMultiple > div:hover {
+            box-shadow: 0 4px 24px -1px rgba(22, 42, 90, .16);
+        }
+
+        .selectMultiple > div .arrow {
+            right: 1px;
+            top: 0;
+            bottom: 0;
+            cursor: pointer;
+            width: 28px;
+            position: absolute;
+        }
+
+            .selectMultiple > div .arrow:before, .selectMultiple > div .arrow:after {
+                content: '';
+                position: absolute;
+                display: block;
+                width: 2px;
+                height: 8px;
+                border-bottom: 8px solid #99a3ba;
+                top: 43%;
+                transition: all 0.3s ease;
+            }
+
+            .selectMultiple > div .arrow:before {
+                right: 12px;
+                transform: rotate(-130deg);
+            }
+
+            .selectMultiple > div .arrow:after {
+                left: 9px;
+                transform: rotate(130deg);
+            }
+
+        .selectMultiple > div span {
+            color: #99a3ba;
+            display: block;
+            position: absolute;
+            left: 12px;
+            cursor: pointer;
+            top: 8px;
+            line-height: 28px;
+            transition: all 0.3s ease;
+        }
+
+            .selectMultiple > div span.hide {
+                opacity: 0;
+                visibility: hidden;
+                transform: translate(-4px, 0);
+            }
+
+        .selectMultiple > div a {
+            position: relative;
+            padding: 0 24px 6px 8px;
+            line-height: 28px;
+            color: #1e2330;
+            display: inline-block;
+            vertical-align: top;
+            margin: 0 6px 0 0;
+        }
+
+            .selectMultiple > div a em {
+                font-style: normal;
+                display: block;
+                white-space: nowrap;
+            }
+
+            .selectMultiple > div a:before {
+                content: '';
+                left: 0;
+                top: 0;
+                bottom: 6px;
+                width: 100%;
+                position: absolute;
+                display: block;
+                background: rgba(163, 189, 233, 0.7);
+                z-index: -1;
+                border-radius: 4px;
+            }
+
+            .selectMultiple > div a i {
+                cursor: pointer;
+                position: absolute;
+                top: 0;
+                right: 0;
+                width: 24px;
+                height: 28px;
+                display: block;
+            }
+
+                .selectMultiple > div a i:before, .selectMultiple > div a i:after {
+                    content: '';
+                    display: block;
+                    width: 2px;
+                    height: 10px;
+                    position: absolute;
+                    left: 50%;
+                    top: 50%;
+                    background: #4d18ff;
+                    border-radius: 1px;
+                }
+
+                .selectMultiple > div a i:before {
+                    transform: translate(-50%, -50%) rotate(45deg);
+                }
+
+                .selectMultiple > div a i:after {
+                    transform: translate(-50%, -50%) rotate(-45deg);
+                }
+
+            .selectMultiple > div a.notShown {
+                opacity: 0;
+                transition: opacity 0.3s ease;
+            }
+
+                .selectMultiple > div a.notShown:before {
+                    width: 28px;
+                    transition: width 0.45s cubic-bezier(0.87, -0.41, 0.19, 1.44) 0.2s;
+                }
+
+                .selectMultiple > div a.notShown i {
+                    opacity: 0;
+                    transition: all 0.3s ease 0.3s;
+                }
+
+                .selectMultiple > div a.notShown em {
+                    opacity: 0;
+                    transform: translate(-6px, 0);
+                    transition: all 0.4s ease 0.3s;
+                }
+
+                .selectMultiple > div a.notShown.shown {
+                    opacity: 1;
+                }
+
+                    .selectMultiple > div a.notShown.shown:before {
+                        width: 100%;
+                    }
+
+                    .selectMultiple > div a.notShown.shown i {
+                        opacity: 1;
+                    }
+
+                    .selectMultiple > div a.notShown.shown em {
+                        opacity: 1;
+                        transform: translate(0, 0);
+                    }
+
+            .selectMultiple > div a.remove:before {
+                width: 28px;
+                transition: width 0.4s cubic-bezier(0.87, -0.41, 0.19, 1.44) 0s;
+            }
+
+            .selectMultiple > div a.remove i {
+                opacity: 0;
+                transition: all 0.3s ease 0s;
+            }
+
+            .selectMultiple > div a.remove em {
+                opacity: 0;
+                transform: translate(-12px, 0);
+                transition: all 0.4s ease 0s;
+            }
+
+            .selectMultiple > div a.remove.disappear {
+                opacity: 0;
+                transition: opacity 0.5s ease 0s;
+            }
+
+    .selectMultiple > ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        font-size: 16px;
+        z-index: 1;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        visibility: hidden;
+        opacity: 0;
+        border-radius: 8px;
+        transform: translate(0, 20px) scale(0.8);
+        transform-origin: 0 0;
+        filter: drop-shadow(0 12px 20px rgba(22, 42, 90, .08));
+        transition: all 0.4s ease, transform 0.4s cubic-bezier(0.87, -0.41, 0.19, 1.44), filter 0.3s ease 0.2s;
+    }
+
+        .selectMultiple > ul li {
+            color: #1e2330;
+            background: #fff;
+            padding: 12px 16px;
+            cursor: pointer;
+            overflow: hidden;
+            position: relative;
+            transition: background 0.3s ease, color 0.3s ease, transform 0.3s ease 0.3s, opacity 0.5s ease 0.3s, border-radius 0.3s ease 0.3s;
+        }
+
+            .selectMultiple > ul li:first-child {
+                border-radius: 8px 8px 0 0;
+            }
+
+                .selectMultiple > ul li:first-child:last-child {
+                    border-radius: 8px;
+                }
+
+            .selectMultiple > ul li:last-child {
+                border-radius: 0 0 8px 8px;
+            }
+
+                .selectMultiple > ul li:last-child:first-child {
+                    border-radius: 8px;
+                }
+
+            .selectMultiple > ul li:hover {
+                background: #4d18ff;
+                color: #fff;
+            }
+
+            .selectMultiple > ul li:after {
+                content: '';
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                width: 6px;
+                height: 6px;
+                background: rgba(0, 0, 0, .4);
+                opacity: 0;
+                border-radius: 100%;
+                transform: scale(1, 1) translate(-50%, -50%);
+                transform-origin: 50% 50%;
+            }
+
+            .selectMultiple > ul li.beforeRemove {
+                border-radius: 0 0 8px 8px;
+            }
+
+                .selectMultiple > ul li.beforeRemove:first-child {
+                    border-radius: 8px;
+                }
+
+            .selectMultiple > ul li.afterRemove {
+                border-radius: 8px 8px 0 0;
+            }
+
+                .selectMultiple > ul li.afterRemove:last-child {
+                    border-radius: 8px;
+                }
+
+            .selectMultiple > ul li.remove {
+                transform: scale(0);
+                opacity: 0;
+            }
+
+                .selectMultiple > ul li.remove:after {
+                    animation: ripple 0.4s ease-out;
+                }
+
+            .selectMultiple > ul li.notShown {
+                display: none;
+                transform: scale(0);
+                opacity: 0;
+                transition: transform 0.35s ease, opacity 0.4s ease;
+            }
+
+                .selectMultiple > ul li.notShown.show {
+                    transform: scale(1);
+                    opacity: 1;
+                }
+
+    .selectMultiple.open > div {
+        box-shadow: 0 4px 20px -1px rgba(22, 42, 90, .12);
+    }
+
+        .selectMultiple.open > div .arrow:before {
+            transform: rotate(-50deg);
+        }
+
+        .selectMultiple.open > div .arrow:after {
+            transform: rotate(50deg);
+        }
+
+    .selectMultiple.open > ul {
+        transform: translate(0, 12px) scale(1);
+        opacity: 1;
+        visibility: visible;
+        filter: drop-shadow(0 16px 24px rgba(22, 42, 90, .16));
+    }
+
+
+
+
+
+
+
+.img_label {
+    padding: 10px;
+    background: #fff;
+    display: table;
+    color: gray;
+    width: 100%;
+    border-radius: 5px;
+}
+
+
+
+input[type="file"] {
+    display: none;
+}

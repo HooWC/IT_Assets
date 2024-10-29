@@ -1,0 +1,141 @@
+﻿* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    width: 100vw;
+    height: 100vh;
+}
+
+/* CSS which you need for blurred box */
+body {
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: top;
+    width: 100%;
+    height: 100%;
+    font-family: Arial, Helvetica;
+    letter-spacing: 0.02em;
+    font-weight: 400;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+}
+
+.video-container video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.video-container .dark_video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    background: black;
+    opacity: 0.7;
+}
+
+
+.blurred-box {
+    position: relative;
+    width: 350px;
+    height: 370px;
+    /*top: calc(50% - 175px);
+    left: calc(50% - 125px);*/
+    background: inherit;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+    .blurred-box:after {
+        content: '';
+        width: 400px;
+        height: 350px;
+        background: inherit;
+        position: absolute;
+        left: -25px;
+        right: 0;
+        top: -25px;
+        bottom: 0;
+        box-shadow: inset 0 0 0 200px rgba(255,255,255,0.2);
+        filter: blur(10px);
+    }
+
+
+/* Form which you dont need */
+.user-login-box {
+    position: relative;
+    margin-top: 50px;
+    text-align: center;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+    .user-login-box > * {
+        display: inline-block;
+        width: 200px;
+    }
+
+.user-icon {
+    width: 100px;
+    height: 100px;
+    position: relative;
+    border-radius: 50%;
+    background: linear-gradient(to bottom, white 84%, black 85%);
+}
+
+    .user-icon img {
+        background-size: contain;
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+    }
+
+.user-name {
+    margin-top: 15px;
+    margin-bottom: 15px;
+    color: white;
+    font-weight: bold;
+}
+
+input.user-password {
+    width: 260px;
+    height: 25px;
+    opacity: 0.6;
+    border-radius: 2px;
+    padding: 5px 15px;
+    border: 0;
+    margin-bottom: 10px;
+}
+
+.submitbtn {
+    width: 120px;
+    border-radius: 20px;
+    padding: 8px 20px;
+    border: 0;
+    font-weight: bold;
+    opacity: 0.6;
+    transition: all 0.3s ease;
+}
+
+    .submitbtn:hover {
+        opacity: 1;
+    }
