@@ -1,0 +1,17 @@
+C:\Users\Hoo\Desktop\IT_Assets_API\Contracts\bin\Debug\net6.0\Contracts.deps.json
+C:\Users\Hoo\Desktop\IT_Assets_API\Contracts\bin\Debug\net6.0\Contracts.runtimeconfig.json
+C:\Users\Hoo\Desktop\IT_Assets_API\Contracts\bin\Debug\net6.0\Contracts.dll
+C:\Users\Hoo\Desktop\IT_Assets_API\Contracts\bin\Debug\net6.0\Contracts.pdb
+C:\Users\Hoo\Desktop\IT_Assets_API\Contracts\bin\Debug\net6.0\DomainModelEntity.dll
+C:\Users\Hoo\Desktop\IT_Assets_API\Contracts\bin\Debug\net6.0\DomainModelEntity.pdb
+C:\Users\Hoo\Desktop\IT_Assets_API\Contracts\obj\Debug\net6.0\Contracts.csproj.AssemblyReference.cache
+C:\Users\Hoo\Desktop\IT_Assets_API\Contracts\obj\Debug\net6.0\Contracts.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Hoo\Desktop\IT_Assets_API\Contracts\obj\Debug\net6.0\Contracts.AssemblyInfoInputs.cache
+C:\Users\Hoo\Desktop\IT_Assets_API\Contracts\obj\Debug\net6.0\Contracts.AssemblyInfo.cs
+C:\Users\Hoo\Desktop\IT_Assets_API\Contracts\obj\Debug\net6.0\Contracts.csproj.CoreCompileInputs.cache
+C:\Users\Hoo\Desktop\IT_Assets_API\Contracts\obj\Debug\net6.0\Contracts.csproj.CopyComplete
+C:\Users\Hoo\Desktop\IT_Assets_API\Contracts\obj\Debug\net6.0\Contracts.dll
+C:\Users\Hoo\Desktop\IT_Assets_API\Contracts\obj\Debug\net6.0\refint\Contracts.dll
+C:\Users\Hoo\Desktop\IT_Assets_API\Contracts\obj\Debug\net6.0\Contracts.pdb
+C:\Users\Hoo\Desktop\IT_Assets_API\Contracts\obj\Debug\net6.0\Contracts.genruntimeconfig.cache
+C:\Users\Hoo\Desktop\IT_Assets_API\Contracts\obj\Debug\net6.0\ref\Contracts.dll

@@ -1,0 +1,15 @@
+C:\Users\Hoo\Desktop\IT_Assets\IT_Assets_Insfrastructure\bin\Debug\net6.0\IT_Assets_Insfrastructure.deps.json
+C:\Users\Hoo\Desktop\IT_Assets\IT_Assets_Insfrastructure\bin\Debug\net6.0\IT_Assets_Insfrastructure.dll
+C:\Users\Hoo\Desktop\IT_Assets\IT_Assets_Insfrastructure\bin\Debug\net6.0\IT_Assets_Insfrastructure.pdb
+C:\Users\Hoo\Desktop\IT_Assets\IT_Assets_Insfrastructure\bin\Debug\net6.0\IT_Assets_DomainModelEntity.dll
+C:\Users\Hoo\Desktop\IT_Assets\IT_Assets_Insfrastructure\bin\Debug\net6.0\IT_Assets_DomainModelEntity.pdb
+C:\Users\Hoo\Desktop\IT_Assets\IT_Assets_Insfrastructure\obj\Debug\net6.0\IT_Assets_Insfrastructure.csproj.AssemblyReference.cache
+C:\Users\Hoo\Desktop\IT_Assets\IT_Assets_Insfrastructure\obj\Debug\net6.0\IT_Assets_Insfrastructure.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Hoo\Desktop\IT_Assets\IT_Assets_Insfrastructure\obj\Debug\net6.0\IT_Assets_Insfrastructure.AssemblyInfoInputs.cache
+C:\Users\Hoo\Desktop\IT_Assets\IT_Assets_Insfrastructure\obj\Debug\net6.0\IT_Assets_Insfrastructure.AssemblyInfo.cs
+C:\Users\Hoo\Desktop\IT_Assets\IT_Assets_Insfrastructure\obj\Debug\net6.0\IT_Assets_Insfrastructure.csproj.CoreCompileInputs.cache
+C:\Users\Hoo\Desktop\IT_Assets\IT_Assets_Insfrastructure\obj\Debug\net6.0\IT_Assets_Insfrastructure.csproj.CopyComplete
+C:\Users\Hoo\Desktop\IT_Assets\IT_Assets_Insfrastructure\obj\Debug\net6.0\IT_Assets_Insfrastructure.dll
+C:\Users\Hoo\Desktop\IT_Assets\IT_Assets_Insfrastructure\obj\Debug\net6.0\refint\IT_Assets_Insfrastructure.dll
+C:\Users\Hoo\Desktop\IT_Assets\IT_Assets_Insfrastructure\obj\Debug\net6.0\IT_Assets_Insfrastructure.pdb
+C:\Users\Hoo\Desktop\IT_Assets\IT_Assets_Insfrastructure\obj\Debug\net6.0\ref\IT_Assets_Insfrastructure.dll

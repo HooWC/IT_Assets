@@ -1,0 +1,14 @@
+C:\Users\Hoo\Desktop\IT_Assets_API\DomainModelEntity\bin\Debug\net6.0\DomainModelEntity.deps.json
+C:\Users\Hoo\Desktop\IT_Assets_API\DomainModelEntity\bin\Debug\net6.0\DomainModelEntity.runtimeconfig.json
+C:\Users\Hoo\Desktop\IT_Assets_API\DomainModelEntity\bin\Debug\net6.0\DomainModelEntity.dll
+C:\Users\Hoo\Desktop\IT_Assets_API\DomainModelEntity\bin\Debug\net6.0\DomainModelEntity.pdb
+C:\Users\Hoo\Desktop\IT_Assets_API\DomainModelEntity\obj\Debug\net6.0\DomainModelEntity.csproj.AssemblyReference.cache
+C:\Users\Hoo\Desktop\IT_Assets_API\DomainModelEntity\obj\Debug\net6.0\DomainModelEntity.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Hoo\Desktop\IT_Assets_API\DomainModelEntity\obj\Debug\net6.0\DomainModelEntity.AssemblyInfoInputs.cache
+C:\Users\Hoo\Desktop\IT_Assets_API\DomainModelEntity\obj\Debug\net6.0\DomainModelEntity.AssemblyInfo.cs
+C:\Users\Hoo\Desktop\IT_Assets_API\DomainModelEntity\obj\Debug\net6.0\DomainModelEntity.csproj.CoreCompileInputs.cache
+C:\Users\Hoo\Desktop\IT_Assets_API\DomainModelEntity\obj\Debug\net6.0\DomainModelEntity.dll
+C:\Users\Hoo\Desktop\IT_Assets_API\DomainModelEntity\obj\Debug\net6.0\refint\DomainModelEntity.dll
+C:\Users\Hoo\Desktop\IT_Assets_API\DomainModelEntity\obj\Debug\net6.0\DomainModelEntity.pdb
+C:\Users\Hoo\Desktop\IT_Assets_API\DomainModelEntity\obj\Debug\net6.0\DomainModelEntity.genruntimeconfig.cache
+C:\Users\Hoo\Desktop\IT_Assets_API\DomainModelEntity\obj\Debug\net6.0\ref\DomainModelEntity.dll

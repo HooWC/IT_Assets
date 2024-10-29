@@ -1,0 +1,12 @@
+C:\Users\Hoo\Desktop\IT_Assets\IT_Assets_DomainModelEntity\bin\Debug\net6.0\IT_Assets_DomainModelEntity.deps.json
+C:\Users\Hoo\Desktop\IT_Assets\IT_Assets_DomainModelEntity\bin\Debug\net6.0\IT_Assets_DomainModelEntity.dll
+C:\Users\Hoo\Desktop\IT_Assets\IT_Assets_DomainModelEntity\bin\Debug\net6.0\IT_Assets_DomainModelEntity.pdb
+C:\Users\Hoo\Desktop\IT_Assets\IT_Assets_DomainModelEntity\obj\Debug\net6.0\IT_Assets_DomainModelEntity.csproj.AssemblyReference.cache
+C:\Users\Hoo\Desktop\IT_Assets\IT_Assets_DomainModelEntity\obj\Debug\net6.0\IT_Assets_DomainModelEntity.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Hoo\Desktop\IT_Assets\IT_Assets_DomainModelEntity\obj\Debug\net6.0\IT_Assets_DomainModelEntity.AssemblyInfoInputs.cache
+C:\Users\Hoo\Desktop\IT_Assets\IT_Assets_DomainModelEntity\obj\Debug\net6.0\IT_Assets_DomainModelEntity.AssemblyInfo.cs
+C:\Users\Hoo\Desktop\IT_Assets\IT_Assets_DomainModelEntity\obj\Debug\net6.0\IT_Assets_DomainModelEntity.csproj.CoreCompileInputs.cache
+C:\Users\Hoo\Desktop\IT_Assets\IT_Assets_DomainModelEntity\obj\Debug\net6.0\IT_Assets_DomainModelEntity.dll
+C:\Users\Hoo\Desktop\IT_Assets\IT_Assets_DomainModelEntity\obj\Debug\net6.0\refint\IT_Assets_DomainModelEntity.dll
+C:\Users\Hoo\Desktop\IT_Assets\IT_Assets_DomainModelEntity\obj\Debug\net6.0\IT_Assets_DomainModelEntity.pdb
+C:\Users\Hoo\Desktop\IT_Assets\IT_Assets_DomainModelEntity\obj\Debug\net6.0\ref\IT_Assets_DomainModelEntity.dll
