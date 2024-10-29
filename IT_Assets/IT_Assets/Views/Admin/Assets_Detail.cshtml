@@ -1,0 +1,26 @@
+﻿@{
+	ViewData["Title"] = "Assets_Detail";
+	Layout = "AdminLayout";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<link rel="stylesheet" href="~/css/Admin/assets_detail.css" />
+</head>
+<body>
+
+	<h1 style="display:none" id="count_number">@ViewBag.count</h1>
+	<h1 style="display:none" id="getAssetID">@ViewBag.id</h1>
+
+	<section class="productCard" style="background-color: #1e1e1e;" id="container_info">
+	</section>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+	<script src="~/js/AssetsDetail.js"></script>
+</body>
+</html>
+

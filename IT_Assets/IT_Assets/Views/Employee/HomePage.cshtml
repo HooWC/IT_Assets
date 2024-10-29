@@ -1,0 +1,386 @@
+﻿@using IT_Assets_DomainModelEntity.Models;
+@model ITAssets
+
+@{
+	ViewData["Title"] = "HomePage";
+	Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>IT Asset</title>
+	<link rel="stylesheet" href="~/css/Employee/HomePage.css" />
+
+</head>
+<body>
+
+
+	<div class="app-container">
+		<div class="app-header">
+			<div class="app-header-left">
+				<img src="~/Images/logowhiteIcon.png" width="30px" />
+				<p class="app-name"><span style="color:red;">IT</span> Asset</p>
+
+			</div>
+			<div class="app-header-right">
+
+				<a id="add_button" href="#open-modal-item-asset" style="margin-right: 10px;background:#171717;" class="add-btn" title="Add New Project">
+					<img width="20px" src="~/Images/view.png">
+				</a>
+
+				<div id="open-modal-item-asset" class="shadow_box modal-window">
+					<a href="#" title="Close" class="modal-close">
+						<img src="~/Images/close.png" />
+					</a>
+
+					<main class="table">
+
+						<section class="table__header">
+							<h1 style="color:white;"><span style="color:red;">IT</span> Assets List</h1>
+							<div class="input-group">
+								<input type="search" id="search_all_asset" placeholder="Search Asset...">
+								<img src="~/Images/search.png" alt="">
+							</div>
+						</section>
+						<section class="table__body">
+							<table>
+								<thead>
+									<tr>
+										<th> ID </th>
+										<th> Asset </th>
+										<th> Type </th>
+										<th> Status </th>
+										<th> Stock </th>
+									</tr>
+								</thead>
+								<tbody id="asset_list_get">
+								</tbody>
+							</table>
+						</section>
+					</main>
+
+				</div>
+
+				<div id="modal_return">
+				</div>
+
+
+
+
+
+
+
+
+
+				<a href="#open-modal" id="add_button" style="margin-right: 10px;background:#171717;" class="add-btn" title="Add New Project">
+					<svg class="btn-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="feather feather-plus">
+						<line x1="12" y1="5" x2="12" y2="19" />
+						<line x1="5" y1="12" x2="19" y2="12" />
+					</svg>
+				</a>
+
+
+				<div class="shadow_box modal-window" id="open-modal">
+					<a href="#" title="Close" class="modal-close">
+						<img src="~/Images/close.png" />
+					</a>
+
+
+					<div class="container_div">
+						<header>Asset Application</header>
+
+						<form action="~/Ajax/Appication_asset_emp" method="post">
+							<div class="form first">
+								<div class="details personal">
+									<span class="title">Personal Details</span>
+
+									<div class="fields">
+										<div class="input-field">
+											<label>Full Name</label>
+											<input type="text" placeholder="Enter your name" required>
+										</div>
+
+										<div class="input-field">
+											<label>Email</label>
+											<input type="text" placeholder="Enter your email" required>
+										</div>
+
+										<div class="input-field">
+											<label>Asset Select</label>
+											<select class="selectclass" name="asset" id="selectGender" asp-for="asset_id" asp-items="ViewBag.list" class="form-control" required>
+												<option disabled selected>Select asset</option>
+											</select>
+										</div>
+
+										<div class="input-field">
+											<label>Date out</label>
+											<input type="date" name="date_out" placeholder="Enter date out" required>
+										</div>
+
+										<div class="input-field">
+											<label>Date return</label>
+											<input type="date" name="date_returned" placeholder="Enter date return" required>
+										</div>
+
+										<div class="input-field">
+											<label>Other Detail</label>
+											<input type="text" name="other_details" placeholder="Enter other detail" required>
+										</div>
+
+									</div>
+								</div>
+
+								<div class="buttons">
+									<button class="sumbit" type="submit">
+										<span class="btnText">Submit</span>
+										<i class="uil uil-navigator"></i>
+									</button>
+								</div>
+
+							</div>
+
+
+						</form>
+					</div>
+					</section>
+				</div>
+
+
+
+
+
+				<a href="~/Home/Home" class="add-btn" style="margin-right:10px;background:#171717;" title="Add New Project">
+					<img width="20px" src="~/Images/quit.png">
+				</a>
+
+
+
+
+
+
+
+
+
+				<div class="shadow_box modal-window" id="open-modal-edit">
+					<a href="#" title="Close" class="modal-close">
+						<img src="~/Images/close.png" />
+					</a>
+
+					<div class="profile-card js-profile-card container_div">
+						<form action="/Ajax/Edit_Employee_emp" method="post" enctype="multipart/form-data">
+							<div class="profile-card__img">
+								<input id="myIcon" type="file" name="file" onchange="ChooseImg(this)">
+								<img src="~/Images/avatar/@ViewBag.avatar" id="img_avatar" alt="profile card" onclick="myIcon.click()">
+							</div>
+
+							<header>Editing</header>
+
+
+							<div class="form first">
+								<div class="details personal">
+									<span class="title">Personal Details</span>
+
+									<div class="fields">
+										<div class="input-field">
+											<label>First Name</label>
+											<input type="text" value="@ViewBag.first" name="first_name" placeholder="Enter your new first name" required>
+										</div>
+
+										<div class="input-field">
+											<label>Last Name</label>
+											<input type="text" value="@ViewBag.last" name="last_name" placeholder="Enter your new last name" required>
+										</div>
+
+										<div class="input-field">
+											<label>Phone Number</label>
+											<input type="text" value="@ViewBag.phone" name="extension" placeholder="Enter your new phone number" required>
+										</div>
+
+										<div class="input-field">
+											<label>Email</label>
+											<input type="email" value="@ViewBag.email" name="email_address" placeholder="Enter your new email" required>
+										</div>
+
+										<div class="input-field">
+											<label>Username</label>
+											<input type="text" value="@ViewBag.username" name="username" placeholder="Enter your new username" required>
+										</div>
+
+										<div class="input-field">
+											<label>Password</label>
+											<input type="password" value="@ViewBag.password" name="password" placeholder="Enter your new password" required>
+										</div>
+
+									</div>
+								</div>
+
+								<div class="buttons">
+									<button class="sumbit">
+										<span class="btnText">Submit</span>
+										<i class="uil uil-navigator"></i>
+									</button>
+								</div>
+
+							</div>
+
+
+						</form>
+
+
+
+					</div>
+
+
+
+
+				</div>
+
+				<a href="#open-modal_Information" class="profile-btn">
+					<img src="~/Images/avatar/@ViewBag.avatar" />
+					<span>@ViewBag.Name</span>
+				</a>
+
+
+				<div class="shadow_box modal-window wrapper individual" id="open-modal_Information">
+					<a href="#" title="Close" class="modal-close">
+						<img src="~/Images/close.png" />
+					</a>
+
+
+					<div class="profile-card js-profile-card">
+						<div class="profile-card__img">
+							<img src="~/Images/avatar/@ViewBag.avatar" alt="profile card">
+						</div>
+
+						<div class="profile-card__cnt js-profile-cnt">
+							<div class="profile-card__name">@ViewBag.Name</div>
+							<div class="profile-card__txt">@ViewBag.email</div>
+							<div class="profile-card-loc">
+								<span class="profile-card-loc__icon">
+									<img class="icon" src="~/Images/phone.png" />
+								</span>
+
+								<span class="profile-card-loc__txt">
+									@ViewBag.phone
+								</span>
+							</div>
+
+							<div class="profile-card-inf">
+								<div class="profile-card-inf__item">
+									<a href="https://www.facebook.com/iaMuhammedErdem" class="profile-card-social__item facebook" target="_blank">
+										<span class="icon-font">
+											<img class="icon" src="~/Images//Technologyicon.png" />
+										</span>
+									</a>
+									<div class="profile-card-inf__txt">@ViewBag.department</div>
+								</div>
+
+								<div class="profile-card-inf__item">
+									<a href="https://codepen.io/JavaScriptJunkie" class="profile-card-social__item codepen" target="_blank">
+										<span class="icon-font">
+											<!-- <svg class="icon"><use xlink:href="#icon-codepen"></use></svg> -->
+											<img class="icon icon_img" src="~/Images/Employeeicon.png" />
+										</span>
+									</a>
+									<div class="profile-card-inf__txt">@ViewBag.position</div>
+								</div>
+
+
+							</div>
+
+							<div class="profile-card-ctr">
+								<!-- <button class="profile-card__button button--blue js-message-btn">Message</button> -->
+								<a href="#open-modal-edit" class="profile-card__button button--orange" style="text-decoration: none;">Editing Personal Information</a>
+							</div>
+						</div>
+
+					</div>
+
+				</div>
+
+
+
+
+			</div>
+
+		</div>
+
+		<div class="app-content">
+
+
+			<div class="projects-section">
+				<div class="projects-section-header">
+					<p>Leased Assets</p>
+					<p class="time">@ViewBag.Date</p>
+				</div>
+				<div class="projects-section-line">
+					<div class="projects-status">
+						<div class="item-status">
+							<span class="status-number">@ViewBag.use</span>
+							<span class="status-type">Leased</span>
+						</div>
+						<div class="item-status">
+							<span class="status-number">0</span>
+							<span class="status-type">Compensation</span>
+						</div>
+						<div class="item-status">
+							<span class="status-number">@ViewBag.application</span>
+							<span class="status-type">Application</span>
+						</div>
+					</div>
+					<div class="view-actions">
+						<button class="view-btn grid-view active" title="Grid View">
+							<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-grid">
+								<rect x="3" y="3" width="7" height="7" />
+								<rect x="14" y="3" width="7" height="7" />
+								<rect x="14" y="14" width="7" height="7" />
+								<rect x="3" y="14" width="7" height="7" />
+							</svg>
+						</button>
+					</div>
+				</div>
+				<div class="project-boxes jsGridView" id="asset_list">
+				</div>
+			</div>
+
+			<div class="messages-section">
+				<button class="messages-close">
+					<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x-circle">
+						<circle cx="12" cy="12" r="10" />
+						<line x1="15" y1="9" x2="9" y2="15" />
+						<line x1="9" y1="9" x2="15" y2="15" />
+					</svg>
+				</button>
+				<div class="projects-section-header">
+					<p>Return History</p>
+				</div>
+				<div class="messages" id="history">
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+	<script src="~/js/EmployeeHome.js"></script>
+	<script>
+		function ChooseImg(file) {
+			var file = file.files[0]
+
+			var reader = new FileReader();
+
+			reader.readAsDataURL(file);
+
+			reader.onload = function () {
+				var img = document.getElementById("img_avatar");
+				console.log(this.result)
+				img.src = this.result;
+			};
+		}
+	</script>
+
+</body>
+</html>
+

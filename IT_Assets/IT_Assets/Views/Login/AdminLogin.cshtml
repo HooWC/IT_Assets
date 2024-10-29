@@ -1,0 +1,38 @@
+﻿@{
+	ViewData["Title"] = "AdminLogin";
+	Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>IT Asset</title>
+	<link rel="stylesheet" href="~/css/login/admin.css" />
+</head>
+<body>
+
+	<div class="video-container">
+		<video src=@Url.Content("~/video/video3.mp4") id="video-slider" loop autoplay muted></video>
+		<div class="dark_video"></div>
+	</div>
+
+	<div class="blurred-box">
+		<form action="~/Login/AdminLogin_Post" method="post">
+			<div class="user-login-box">
+				<span class="user-icon">
+					<img src="~/Images/avatar/avatar.png" />
+				</span>
+				<div class="user-name">ADMIN LOGIN</div>
+				<input class="user-password" type="text" name="username" placeholder="username" />
+				<input class="user-password" type="text" name="password" placeholder="password" />
+				<button class="submitbtn" type="submit">LOGIN</button>
+			</div>
+		</form>
+	</div>
+
+	@*<script src="./script.js"></script>*@
+</body>
+</html>
+

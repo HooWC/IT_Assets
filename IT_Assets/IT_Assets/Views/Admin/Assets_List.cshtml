@@ -1,0 +1,59 @@
+﻿@{
+	ViewData["Title"] = "Assets_List";
+	Layout = "AdminLayout";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<link rel="stylesheet" href="~/css/Admin/assets_list.css" />
+</head>
+<body>
+	<h1 style="display:none" id="count_number">@ViewBag.count</h1>
+	<div class="app-container">
+
+		<div class="app-content">
+			<div class="app-content-header">
+				<h1 class="app-content-headerText" style="font-weight:bold;"><span style="color:red;">IT</span> Assets</h1>
+				<button class="app-content-headerButton" id="Move_To_Add_AssetPage">Add Asset</button>
+			</div>
+			<div class="app-content-actions">
+				<input class="search-bar" id="Search_Data" placeholder="Search..." type="text">
+				<div class="app-content-actions-wrapper">
+
+					<button class="action-button grid active" id="type_di" title="Grid View">
+						<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-grid"><rect x="3" y="3" width="7" height="7" /><rect x="14" y="3" width="7" height="7" /><rect x="14" y="14" width="7" height="7" /><rect x="3" y="14" width="7" height="7" /></svg>
+					</button>
+				</div>
+			</div>
+
+
+			<div class="products-area-wrapper gridView" id="Assets_list_Data">
+			</div>
+
+			<div class="container_cc">
+				<ul class="pagination_cc modal_cc">
+					<li><a href="#" class="prev_cc" id="prev">Previous</a></li>
+					<div id="cv">
+					</div>
+					<li><a href="#" class="next_cc" id="next">Next</a></li>
+				</ul>
+			</div>
+
+
+		</div>
+	</div>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+	<script src="~/js/AssetsList.js"></script>
+	<script>
+		$(function () {
+			var data = document.getElementById("count_number").innerHTML;
+			$("#numberbyapplication").html(data);
+		})
+	</script>
+</body>
+</html>

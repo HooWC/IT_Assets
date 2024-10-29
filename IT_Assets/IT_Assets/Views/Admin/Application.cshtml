@@ -1,0 +1,57 @@
+﻿@{
+	ViewData["Title"] = "Application";
+	Layout = "AdminLayout";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<link rel="stylesheet" href="~/css/Admin/application.css" />
+
+</head>
+<body>
+
+	<h1 style="display:none" id="count_number">@ViewBag.count</h1>
+
+	<div class="app-container">
+
+		<div class="app-content">
+			<div class="app-content-header">
+				<h1 class="app-content-headerText" style="font-weight:bold;"><span style="color:red;">IT</span> Asset Application</h1>
+			</div>
+			<div class="app-content-actions">
+				<div class="app-content-actions-wrapper">
+					<button class="action-button list active" title="List View">
+						<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-list"><line x1="8" y1="6" x2="21" y2="6" /><line x1="8" y1="12" x2="21" y2="12" /><line x1="8" y1="18" x2="21" y2="18" /><line x1="3" y1="6" x2="3.01" y2="6" /><line x1="3" y1="12" x2="3.01" y2="12" /><line x1="3" y1="18" x2="3.01" y2="18" /></svg>
+					</button>
+				</div>
+			</div>
+			<div class="products-area-wrapper tableView">
+				<div class="products-header">
+					<div class="product-cell image">
+						Asset
+					</div>
+					<div id="n01" class="product-cell status-cell">Employee</div>
+					<div id="n02" class="product-cell sales">Date Out</div>
+					<div id="n03" class="product-cell stock">Date Returned</div>
+					<div class="product-cell stock"></div>
+					<div class="product-cell price"></div>
+				</div>
+
+				<div id="list_asset">
+				</div>
+
+
+
+			</div>
+		</div>
+	</div>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+	<script src="~/js/Application.js"></script>
+</body>
+</html>
+

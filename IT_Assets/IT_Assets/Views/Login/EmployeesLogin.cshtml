@@ -1,0 +1,96 @@
+﻿@{
+	ViewData["Title"] = "EmployeesLogin";
+	Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>IT Asset</title>
+	<link rel="stylesheet" href="~/css/login/employees.css" />
+	<link href="https://fonts.googleapis.com/css?family=Poppins:600&display=swap" rel="stylesheet">
+	<script src="https://kit.fontawesome.com/a81368914c.js"></script>
+	<style>
+		/* 修改密码输入字段的样式 */
+		.input[type="password"] {
+			padding-right: 30px; /* 为小眼睛图标留出空间 */
+		}
+
+			/* 修改密码输入字段旁边的小眼睛图标的颜色 */
+			.input[type="password"]::-webkit-contacts-auto-fill-button {
+				-webkit-appearance: none;
+				appearance: none;
+				background-color: transparent; /* 取消默认的背景颜色 */
+				filter: invert(1); /* 尝试通过反转颜色来更改图标颜色 */
+			}
+	</style>
+</head>
+<body>
+	<div class="skw-pages">
+		<div class="skw-page skw-page-1 active">
+
+			<video src=@Url.Content("~/video/video2.mp4") id="video-slider" loop autoplay muted></video>
+
+			<div class="skw-page__half skw-page__half--right">
+				<div class="skw-page__skewed">
+					<div class="skw-page__content">
+
+						<div class="login-content">
+							<form action="~/Login/EmployeesLogin_Post" method="post">
+								<img src="~/Images/avatar/avatar.svg">
+								<h2 class="title">Welcome</h2>
+								<div class="input-div one">
+									<div class="i">
+										<i class="fas fa-user"></i>
+									</div>
+									<div class="div">
+										<h5>Username</h5>
+										<input type="text" name="username" class="input">
+									</div>
+								</div>
+								<div class="input-div pass">
+									<div class="i">
+										<i class="fas fa-lock"></i>
+									</div>
+									<div class="div">
+										<h5>Password</h5>
+										<input type="password" name="password" class="input">
+									</div>
+								</div>
+								<input type="submit" class="btn" value="Login">
+							</form>
+						</div>
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script>
+		const inputs = document.querySelectorAll(".input");
+
+
+		function addcl() {
+			let parent = this.parentNode.parentNode;
+			parent.classList.add("focus");
+		}
+
+		function remcl() {
+			let parent = this.parentNode.parentNode;
+			if (this.value == "") {
+				parent.classList.remove("focus");
+			}
+		}
+
+
+		inputs.forEach(input => {
+			input.addEventListener("focus", addcl);
+			input.addEventListener("blur", remcl);
+		});
+	</script>
+</body>
+</html>
+

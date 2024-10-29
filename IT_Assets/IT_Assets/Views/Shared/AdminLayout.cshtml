@@ -1,0 +1,227 @@
+﻿@using IT_Assets_Insfrastructure.Repository.Api;
+@using Microsoft.AspNetCore.Http
+@inject Microsoft.AspNetCore.Http.IHttpContextAccessor HttpContextAccessor
+
+@{
+	//HttpContext httpContext = Model as HttpContext;
+	string adminValue = @HttpContextAccessor.HttpContext.Session.GetString("Admin");
+	Admin_Api ad = new Admin_Api();
+	var all_ad = ad.GetAllAdmin().Result;
+	var data = all_ad.Where(x => x.id == Convert.ToInt32(adminValue)).FirstOrDefault();
+	ViewBag.Name = data.fullname;
+	ViewBag.avatar = data.avatar;
+}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>IT Asset</title>
+
+	<!-- Google Font: Source Sans Pro -->
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+	<link rel="stylesheet" href="~/AdminTLE/plugins/fontawesome-free/css/all.min.css">
+	<link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+	<link rel="stylesheet" href="~/AdminTLE/plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css">
+	<!-- iCheck -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"
+		  integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+	<link rel="stylesheet" href="~/AdminTLE/plugins/icheck-bootstrap/icheck-bootstrap.min.css">
+	<!-- JQVMap -->
+	<link rel="stylesheet" href="~/AdminTLE/plugins/jqvmap/jqvmap.min.css">
+	<!-- Theme style -->
+	<link rel="stylesheet" href="~/AdminTLE/dist/css/adminlte.min.css">
+	<!-- overlayScrollbars -->
+	<link rel="stylesheet" href="~/AdminTLE/plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
+	<!-- Daterange picker -->
+	<link rel="stylesheet" href="~/AdminTLE/plugins/daterangepicker/daterangepicker.css">
+	<!-- summernote -->
+	<link rel="stylesheet" href="~/AdminTLE/plugins/summernote/summernote-bs4.min.css">
+	<link rel="icon" type="image/x-icon" href="~/favicon.ico">
+	<style>
+		.sidebar {
+			background: #171717;
+		}
+
+		.brand-link {
+			background: #171717;
+		}
+
+		.navbar-dark {
+			background: #171717;
+		}
+	</style>
+</head>
+<body class="hold-transition sidebar-mini layout-fixed">
+	<div class="wrapper">
+
+		<!-- Preloader -->
+		<div class="preloader flex-column justify-content-center align-items-center">
+			<img class="animation__shake" src="~/Images/loading.png" alt="AdminLTELogo" height="60" width="60">
+		</div>
+
+		<!-- Navbar -->
+		<nav class="main-header navbar navbar-expand navbar-dark navbar-light">
+			<!-- Left navbar links -->
+			<ul class="navbar-nav">
+				<li class="nav-item" id="bars_item">
+					<a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
+				</li>
+			</ul>
+
+		</nav>
+		<!-- /.navbar -->
+		<!-- Main Sidebar Container -->
+		<aside class="main-sidebar sidebar-dark-primary elevation-4">
+			<!-- Brand Logo -->
+			<a href="~/Admin/HomePage" class="brand-link">
+				<img src="~/Images/logowhiteIcon.png" alt="AdminLTE Logo" class="brand-image" style="opacity: .8">
+				<span class="brand-text" style="font-weight:bold;"><span style="color:red;">IT</span> Assets</span>
+			</a>
+
+			<!-- Sidebar -->
+			<div class="sidebar">
+				<!-- Sidebar user panel (optional) -->
+				<div class="user-panel mt-3 pb-3 mb-3 d-flex">
+					<div class="image">
+						<img src="~/Images/@ViewBag.avatar" class="img-circle elevation-2" alt="User Image">
+					</div>
+					<div class="info">
+						<a href="#" class="d-block">@ViewBag.Name</a>
+					</div>
+				</div>
+
+				<!-- SidebarSearch Form -->
+				@*<div class="form-inline">
+				<div class="input-group" data-widget="sidebar-search">
+				<input class="form-control form-control-sidebar" type="search" placeholder="Search" aria-label="Search">
+				<div class="input-group-append">
+				<button class="btn btn-sidebar">
+				<i class="fas fa-search fa-fw"></i>
+				</button>
+				</div>
+				</div>
+				</div>*@
+
+				<!-- Sidebar Menu -->
+				<nav class="mt-2">
+					<ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+
+						<li class="nav-header" style="font-weight:bold;">MAIN OPTIONS</li>
+
+						<li class="nav-item" id="HomePage">
+							<a href="~/Admin/HomePage" class="nav-link">
+								<i class="nav-icon fas fa-chart-pie"></i>
+								<p>
+									Dashboard
+									@*<span class="right badge badge-danger">New</span>*@
+								</p>
+							</a>
+						</li>
+
+						<li class="nav-item" id="Asset_Inventory">
+							<a href="#" class="nav-link">
+								<i class="nav-icon fas fa-server"></i>
+								<p>
+									Asset Inventory
+									<i class="fas fa-angle-left right"></i>
+
+								</p>
+							</a>
+							<ul class="nav nav-treeview">
+								<li class="nav-item" id="Asset_List">
+									<a href="~/Admin/Assets_List" class="nav-link">
+										<i class="far fa-circle nav-icon"></i>
+										<p>Asset List</p>
+									</a>
+								</li>
+							</ul>
+						</li>
+
+						<li class="nav-item" id="User_Management">
+							<a href="#" class="nav-link">
+								<i class="nav-icon fa-solid fa-user"></i>
+								<p>
+									User Management
+									<i class="right fas fa-angle-left"></i>
+								</p>
+							</a>
+							<ul class="nav nav-treeview">
+								<li class="nav-item" id="Employees_List">
+									<a href="~/Admin/Employees_List" class="nav-link">
+										<i class="far fa-circle nav-icon"></i>
+										<p>Employee List</p>
+									</a>
+								</li>
+							</ul>
+						</li>
+
+						<li class="nav-item" id="Application_Management">
+							<a href="#" class="nav-link">
+								<i class="nav-icon fas fa-copy"></i>
+								<p>
+									Application
+									<i class="fas fa-angle-left right"></i>
+									<span class="badge badge-info right" id="numberbyapplication"></span>
+								</p>
+							</a>
+							<ul class="nav nav-treeview">
+								<li class="nav-item" id="Application_List">
+									<a href="~/Admin/Application" class="nav-link">
+										<i class="far fa-circle nav-icon"></i>
+										<p>Application List</p>
+									</a>
+								</li>
+							</ul>
+						</li>
+
+
+						<li class="nav-header" style="font-weight:bold;">OTHER OPTIONS</li>
+						<li class="nav-item">
+							<a href="~/Home/Home" class="nav-link">
+								<i class="nav-icon fas fa-sign-out-alt"></i>
+								<p>
+									Log Out
+								</p>
+							</a>
+						</li>
+
+					</ul>
+				</nav>
+				<!-- /.sidebar-menu -->
+			</div>
+			<!-- /.sidebar -->
+		</aside>
+
+		<!-- Content Wrapper. Contains page content -->
+		<div class="content-wrapper">
+			<div>
+				@RenderBody()
+			</div>
+		</div>
+		<!-- /.content-wrapper -->
+		<!-- Control Sidebar -->
+		<aside class="control-sidebar control-sidebar-dark">
+			<!-- Control sidebar content goes here -->
+		</aside>
+		<!-- /.control-sidebar -->
+	</div>
+	<!-- ./wrapper -->
+	<!-- jQuery -->
+	<script src="plugins/jquery/jquery.min.js"></script>
+	<!-- jQuery UI 1.11.4 -->
+	<script src="plugins/jquery-ui/jquery-ui.min.js"></script>
+	<!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
+	<script>
+		$.widget.bridge('uibutton', $.ui.button)
+	</script>
+
+
+	<script src="~/AdminTLE/plugins/jquery/jquery.min.js"></script>
+	<script src="~/AdminTLE/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+	<script src="~/AdminTLE/dist/js/adminlte.js"></script>
+	<script src="~/AdminTLE/dist/js/pages/dashboard3.js"></script>
+</body>
+</html>

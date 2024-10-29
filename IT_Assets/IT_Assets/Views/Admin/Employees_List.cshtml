@@ -1,0 +1,168 @@
+﻿@{
+	ViewData["Title"] = "Employees_List";
+	Layout = "AdminLayout";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<link rel="stylesheet" href="./style.css" />
+	<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.16/dist/tailwind.min.css" rel="stylesheet">
+	<link href="~/css/Admin/employees_list.css" rel="stylesheet" />
+</head>
+<body style="position: relative;">
+	<h1 style="display:none" id="count_number">@ViewBag.count</h1>
+	<div class="bg-gray-100 dark:bg-gray-900 dark:text-white text-gray-600 h-screen flex overflow-hidden text-sm" style="height:92vh;position: relative;">
+
+
+		<div class="flex-grow overflow-hidden h-full flex flex-col">
+
+
+
+			<div class="flex-grow flex overflow-x-hidden" style="background:#1e1e1e;">
+
+
+
+				<div class="pb-24 mb xl:w-72 w-48 flex-shrink-0  dark:border-gray-800 h-full overflow-y-scroll hide-scrollbar lg:block hidden p-5 scroll_type">
+					@*<div class="text-xs text-gray-400 tracking-wider">USERS</div>*@
+					<a class="btn text-gray-400 btn_add" href="#open-modal">Add Employee</a>
+					<div class="relative mt-2">
+						<input type="text" id="search_employees" class="pl-8 h-9 bg-transparent border border-gray-300 dark:border-gray-700 w-full rounded-md text-sm" style="color:white;" placeholder="Search" />
+						<svg viewBox="0 0 24 24" class="w-4 absolute text-gray-400 top-1/2 transform translate-x-0.5 -translate-y-1/2 left-2" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+							<circle cx="11" cy="11" r="8"></circle>
+							<line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+						</svg>
+					</div>
+					<div class="space-y-4 mt-3" id="employeeListData" style="padding-bottom:0rem;">
+					</div>
+				</div>
+
+
+				<div id="model_show">
+					@*Modal*@
+					<div class="shadow_box modal-window" id="open-modal">
+						<a href="#" title="Close" class="modal-close">
+							<img src="~/Images/close.png" />
+						</a>
+
+						<section class="container_form">
+							<header>Employee Registration Form</header>
+							<form action="~/Ajax/Form_Add_Employee" method="post" class="form">
+								<div class="column_form">
+									<div class="input-box_form">
+										<label>First Name</label>
+										<input type="text" name="first_name" placeholder="Enter first name" required />
+									</div>
+									<div class="input-box_form">
+										<label>Last Name</label>
+										<input type="text" name="last_name" placeholder="Enter last name" required />
+									</div>
+								</div>
+								<div class="column_form">
+									<div class="input-box_form">
+										<label>Department</label>
+										<div class="select-box">
+											<select name="department">
+												<option hidden>Department</option>
+												<option>Technology</option>
+												<option>Customer Service</option>
+												<option>Finance</option>
+												<option>Strategic Planning</option>
+												<option>Internal Audit</option>
+												<option>Human Resources</option>
+												<option>Sales</option>
+												<option>Marketing</option>
+											</select>
+										</div>
+									</div>
+									<div class="input-box_form">
+										<label>Position</label>
+										<div class="select-box">
+											<select name="position">
+												<option hidden>Position</option>
+												<option>Staff</option>
+												<option>Manager</option>
+												<option>CEO</option>
+												<option>COO</option>
+												<option>CFO</option>
+											</select>
+										</div>
+									</div>
+								</div>
+
+
+
+								<div class="column_form">
+									<div class="input-box_form">
+										<label>Email Address</label>
+										<input type="email" name="email_address" placeholder="Enter email address" required />
+									</div>
+									<div class="input-box_form">
+										<label>Phone Number</label>
+										<input type="text" name="extension" placeholder="Enter phone number" required />
+									</div>
+								</div>
+
+								<div class="column_form">
+									<div class="input-box_form">
+										<label>Username</label>
+										<input type="text" name="username" placeholder="Enter username" required />
+									</div>
+									<div class="input-box_form">
+										<label>Password</label>
+										<input type="password" name="password" placeholder="Enter password" required />
+									</div>
+								</div>
+
+
+
+								<button style="font-weight:bold;" type="submit">Submit</button>
+							</form>
+						</section>
+					</div>
+				</div>
+
+
+				<div id="left_side" class="flex-grow dark:bg-gray-900 overflow-y-auto mb-16">
+					<div id="Employee_Detail" style="background:#1e1e1e;" class="pb-10 sm:px-7 sm:pt-7 px-4 pt-4 flex flex-col w-full border-b-4 border-black  text-whitee dark:border-gray-800 sticky top-0">
+					</div>
+
+					<div class="sm:p-7 p-4">
+
+
+
+						<table class="w-full text-left" style="margin-top:20px;">
+							<thead>
+								<tr class="text-gray-400 th">
+									<th class="px-3 pt-0 pb-3 border-b border-gray-200 dark:border-gray-800">Type</th>
+									<th class="px-3 pt-0 pb-3 border-b border-gray-200 dark:border-gray-800">Condition Out</th>
+									<th class="px-3 pt-0 pb-3 border-b border-gray-200 dark:border-gray-800">Description</th>
+									<th class="px-3 pt-0 pb-3 border-b border-gray-200 dark:border-gray-800">Date Out</th>
+									<th class="px-3 pt-0 pb-3 border-b border-gray-200 dark:border-gray-800">Other Detail</th>
+								</tr>
+							</thead>
+							<tbody class="text-gray-600 dark:text-gray-100" id="tableList">
+							</tbody>
+						</table>
+
+					</div>
+				</div>
+
+
+			</div>
+
+
+		</div>
+
+	</div>
+
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+	<script src="~/js/EmployeeList.js"></script>
+
+</body>
+</html>
+

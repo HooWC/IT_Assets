@@ -1,0 +1,346 @@
+﻿@{
+	ViewData["Title"] = "HomePage";
+	Layout = "AdminLayout";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<link rel="stylesheet" href="~/css/AdminHomePage.css" />
+	<link rel="preconnect" href="https://fonts.googleapis.com" />
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+	<link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;700&display=swap"
+		  rel="stylesheet" />
+</head>
+<body>
+	<h1 style="display:none" id="count_number">@ViewBag.count</h1>
+
+	<h1 style="display:none;" id="tec_chart">@ViewBag.Tec</h1>
+	<h1 style="display:none;" id="sales_chart">@ViewBag.Sales</h1>
+	<h1 style="display:none;" id="marketing_chart">@ViewBag.Marketing</h1>
+	<h1 style="display:none;" id="finance_chart">@ViewBag.Finance</h1>
+	<h1 style="display:none;" id="cs_chart">@ViewBag.CS</h1>
+	<h1 style="display:none;" id="sp_chart">@ViewBag.SP</h1>
+	<h1 style="display:none;" id="hr_chart">@ViewBag.HR</h1>
+	<h1 style="display:none;" id="ia_chart">@ViewBag.IA</h1>
+
+	<div class="body_div">
+
+		<div class="app-main">
+			<div class="main-header_admin">
+				<div class="main-header__intro-wrapper">
+
+					<div class="main-header__welcome">
+						<div class="main-header__welcome-title text-light" style="font-weight:bold;">Welcome, <strong>@ViewBag.name</strong></div>
+
+					</div>
+
+				</div>
+			</div>
+			<div class="main-header-line">
+
+
+
+				@*<h1>Applications Dashboard</h1>*@
+				@*<div class="action-buttons">
+				<button class="open-right-area">
+				<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-activity"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12" /></svg>
+				</button>
+				<button class="menu-button">
+				<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu"><line x1="3" y1="12" x2="21" y2="12" /><line x1="3" y1="6" x2="21" y2="6" /><line x1="3" y1="18" x2="21" y2="18" /></svg>
+				</button>
+				</div>*@
+			</div>
+
+
+			<div class="chart-row three">
+				<div class="chart-container-wrapper">
+					<div class="chart-container">
+						<div class="chart-info-wrapper">
+							<h2>Assets</h2>
+							<span style="font-weight:bold;">@ViewBag.asset_count</span>
+						</div>
+						<div class="chart-svg">
+							<svg viewBox="0 0 36 36" class="circular-chart pink">
+								<path class="circle-bg" d="M18 2.0845
+              a 15.9155 15.9155 0 0 1 0 31.831
+              a 15.9155 15.9155 0 0 1 0 -31.831"></path>
+								<path class="circle" stroke-dasharray="@ViewBag.asset_count_data, 100" d="M18 2.0845
+              a 15.9155 15.9155 0 0 1 0 31.831
+              a 15.9155 15.9155 0 0 1 0 -31.831"></path>
+								<text x="18" y="20.35" class="percentage">@ViewBag.asset_count_data%</text>
+							</svg>
+						</div>
+					</div>
+				</div>
+				<div class="chart-container-wrapper">
+					<div class="chart-container">
+						<div class="chart-info-wrapper">
+							<h2>Employees Lease</h2>
+							<span style="font-weight:bold;">@ViewBag.emp_count</span>
+						</div>
+						<div class="chart-svg">
+							<svg viewBox="0 0 36 36" class="circular-chart blue">
+								<path class="circle-bg" d="M18 2.0845
+              a 15.9155 15.9155 0 0 1 0 31.831
+              a 15.9155 15.9155 0 0 1 0 -31.831"></path>
+								<path class="circle" stroke-dasharray="@ViewBag.emp, 100" d="M18 2.0845
+              a 15.9155 15.9155 0 0 1 0 31.831
+              a 15.9155 15.9155 0 0 1 0 -31.831"></path>
+								<text x="18" y="20.35" class="percentage">@ViewBag.emp%</text>
+							</svg>
+						</div>
+					</div>
+				</div>
+				<div class="chart-container-wrapper">
+					<div class="chart-container">
+						<div class="chart-info-wrapper">
+							<h2>Assigned</h2>
+							<span style="font-weight:bold;">@ViewBag.assigned_count</span>
+						</div>
+						<div class="chart-svg">
+							<svg viewBox="0 0 36 36" class="circular-chart orange">
+								<path class="circle-bg" d="M18 2.0845
+              a 15.9155 15.9155 0 0 1 0 31.831
+              a 15.9155 15.9155 0 0 1 0 -31.831"></path>
+								<path class="circle" stroke-dasharray="ViewBag.assigned, 100" d="M18 2.0845
+              a 15.9155 15.9155 0 0 1 0 31.831
+              a 15.9155 15.9155 0 0 1 0 -31.831"></path>
+								<text x="18" y="20.35" class="percentage">@ViewBag.assigned%</text>
+							</svg>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="chart-row two">
+				<div class="chart-container-wrapper big">
+					<div class="chart-container">
+						<div class="chart-container-header">
+							<h2>Departmental Calculations</h2>
+							<span>Today</span>
+						</div>
+						<div class="line-chart">
+
+
+							<div class="programming-stats">
+								<div class="chart-container-mychart">
+									<canvas class="my-chart"></canvas>
+								</div>
+
+								<div class="details">
+									<ul></ul>
+								</div>
+							</div>
+
+
+
+
+							<div>
+								<div class="progress-bar-info" style="margin-bottom:10px">
+									<span class="progress-color" style="background-color: rgb(79, 180, 238);"></span>
+									<span class="progress-type">Technology</span>
+									<span class="progress-amount">@ViewBag.Tec.ToString("0.0")%</span>
+								</div>
+								<div class="progress-bar-info" style="margin-bottom:10px">
+									<span class="progress-color" style="background-color: rgba(255, 92, 92, 1);"></span>
+									<span class="progress-type" style="width:200px">Sales</span>
+									<span class="progress-amount">@ViewBag.Sales.ToString("0.0")%</span>
+								</div>
+								<div class="progress-bar-info" style="margin-bottom:10px">
+									<span class="progress-color" style="background-color: rgba(253, 172, 66, 1);"></span>
+									<span class="progress-type">Marketing</span>
+									<span class="progress-amount">@ViewBag.Marketing.ToString("0.0")%</span>
+								</div>
+								<div class="progress-bar-info" style="margin-bottom:10px">
+									<span class="progress-color" style="background:rgb(255, 255, 99);"></span>
+									<span class="progress-type">Finance</span>
+									<span class="progress-amount">@ViewBag.Finance.ToString("0.0")%</span>
+								</div>
+								<div class="progress-bar-info" style="margin-bottom:10px">
+									<span class="progress-color" style="background-color: rgba(0, 207, 222, 1);"></span>
+									<span class="progress-type" style="width:200px">Customer Service</span>
+									<span class="progress-amount">@ViewBag.CS.ToString("0.0")%</span>
+								</div>
+								<div class="progress-bar-info" style="margin-bottom:10px">
+									<span class="progress-color" style="background:rgb(154, 96, 236);"></span>
+									<span class="progress-type">Strategic Planning</span>
+									<span class="progress-amount">@ViewBag.SP.ToString("0.0")%</span>
+								</div>
+								<div class="progress-bar-info">
+									<span class="progress-color" style="background:rgb(177, 186, 192);"></span>
+									<span class="progress-type">Human Resources</span>
+									<span class="progress-amount">@ViewBag.HR.ToString("0.0")%</span>
+								</div>
+								<div class="progress-bar-info" style="margin-bottom:10px">
+									<span class="progress-color" style="background-color: rgb(79, 180, 238);"></span>
+									<span class="progress-type" style="width:200px">Internal Audit</span>
+									<span class="progress-amount">@ViewBag.IA.ToString("0.0")%</span>
+								</div>
+							</div>
+
+
+						</div>
+						<div class="chart-data-details">
+							<div class="chart-details-header"></div>
+						</div>
+					</div>
+				</div>
+				<div class="chart-container-wrapper small">
+					<div class="chart-container">
+						<div class="chart-container-header">
+							<h2>Assessment</h2>
+							<span href="#">Today</span>
+						</div>
+						<div class="acquisitions-bar">
+							<span class="bar-progress applications" style="width:@ViewBag.asset_count_data%;"></span>
+							<span class="bar-progress shortlisted" style="width:@ViewBag.emp%;"></span>
+							<span class="bar-progress rejected" style="width:@ViewBag.assigned%;"></span>
+						</div>
+						<div class="progress-bar-info">
+							<span class="progress-color applications"></span>
+							<span class="progress-type">Assets</span>
+							<span class="progress-amount">@ViewBag.asset_count_data%</span>
+						</div>
+						<div class="progress-bar-info">
+							<span class="progress-color shortlisted"></span>
+							<span class="progress-type">Employees Lease</span>
+							<span class="progress-amount">@ViewBag.emp%</span>
+						</div>
+						<div class="progress-bar-info">
+							<span class="progress-color rejected"></span>
+							<span class="progress-type">Assigned</span>
+							<span class="progress-amount">@ViewBag.assigned%</span>
+						</div>
+					</div>
+					<div class="chart-container applicants" id="admin">
+						<div class="chart-container-header">
+							<h2>Admin List</h2>
+						</div>
+
+
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+	</div>
+
+	<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+	<script>
+		$("#HomePage").css({
+			"background": "rgb(226, 53, 53)",
+			"border-radius": "5px",
+			"line-height": "1"
+		});
+
+		$(".content-wrapper").css({
+			//"background": "#1a202c"
+			"background": "#1e1e1e"
+			//"background": "#454d55"
+		});
+
+		var data = document.getElementById("count_number").innerHTML;
+		$("#numberbyapplication").html(data);
+
+		$(function () {
+
+			$.ajax({
+				type: "GET",
+				url: `/Ajax/Get_Admin_Admin`,
+				dataType: "json",
+				success: function (data) {
+					GetAdminData(data, "admin");
+				}
+			})
+
+			function GetAdminData(data, name) {
+
+				$.each(data, function (x, y) {
+
+					$("#" + name).append(`
+
+																									<div class="applicant-line">
+																												<img src="/Images/${y.avatar}" alt="profile">
+																													<div class="applicant-info">
+																														<span style="font-weight:bold;">${y.fullname}</span>
+																													</div>
+																									</div>
+
+																							`)
+
+
+				})
+
+			}
+
+
+
+
+
+		})
+
+
+
+
+		const tec = document.getElementById("tec_chart").innerHTML;
+		const sal = document.getElementById("sales_chart").innerHTML;
+		const mar = document.getElementById("marketing_chart").innerHTML;
+		const fin = document.getElementById("finance_chart").innerHTML;
+		const cs = document.getElementById("cs_chart").innerHTML;
+		const sp = document.getElementById("sp_chart").innerHTML;
+		const hr = document.getElementById("hr_chart").innerHTML;
+		const ia = document.getElementById("ia_chart").innerHTML;
+
+		console.log("tec:" + tec)
+
+		const chartData = {
+			labels: ["Technology", "Sales", "Marketing", "Finance", "Customer Service", "Strategic Planning", "Human Resources", "Internal Audit"],
+			data: [tec, sal, mar, fin, cs, sp, hr, ia],
+		};
+
+		const myChart = document.querySelector(".my-chart");
+		const ul = document.querySelector(".programming-stats .details ul");
+
+		new Chart(myChart, {
+			type: "doughnut",
+			data: {
+				labels: chartData.labels,
+				datasets: [
+					{
+						label: "Language Popularity",
+						data: chartData.data,
+					},
+				],
+			},
+			options: {
+				borderWidth: 10,
+				borderRadius: 2,
+				hoverBorderWidth: 0,
+				plugins: {
+					legend: {
+						display: false,
+					},
+				},
+			},
+		});
+
+
+		populateUl();
+
+
+
+
+
+
+	</script>
+
+
+</body>
+</html>
+

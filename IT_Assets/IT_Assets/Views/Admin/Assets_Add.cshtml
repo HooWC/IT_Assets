@@ -1,0 +1,111 @@
+﻿@{
+	ViewData["Title"] = "Assets_Add";
+	Layout = "AdminLayout";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title> Responsive Registration Form | CodingLab </title>
+	<link rel="stylesheet" href="~/css/Admin/assets_add.css" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+	<h1 style="display:none" id="count_number">@ViewBag.count</h1>
+
+	<div class="body_container">
+		<div class="container">
+			<div class="title"><span style="color:red;">IT</span> Asset Registration</div>
+			<div class="content">
+				<form action="~/Ajax/Add_Asset_Form" method="post" enctype="multipart/form-data">
+					<div class="user-details">
+						<div class="input-box">
+							<span class="details">Asset Image</span>
+							<label class="img_label">
+								Enter Your File
+								<input type="file" name="file" size="60">
+							</label>
+						</div>
+						<div class="input-box">
+							<span class="details">Description</span>
+							<input type="text" name="description" placeholder="Enter Description" required>
+						</div>
+						<div class="input-box">
+							<span class="details">Inventory Detail</span>
+							<input type="text" name="Inventoryotherdetails" placeholder="Enter Inventory Detail" required>
+
+						</div>
+						<div class="input-box">
+							<span class="details">Stock Number</span>
+							<input type="text" name="stock" placeholder="Enter Stock Number" required>
+						</div>
+						<div class="input-box" style="width:100%">
+							<span class="details">Other Details</span>
+							<select multiple data-placeholder="Add tools" name="other_details">
+								<option value="For internal use only">For internal use only</option>
+								<option selected value="Requires regular software updates">Requires regular software updates</option>
+								<option value="Restrict access to specific users only">Restrict access to specific users only</option>
+								<option value="Prohibit installation of third-party software">Prohibit installation of third-party software</option>
+								<option value="VPN connection required">VPN connection required</option>
+								<option value="Maintain a clean environment">Maintain a clean environment</option>
+							</select>
+						</div>
+					</div>
+
+					<div class="gender-details">
+						<input type="radio" name="asset_type_code" id="dot-1" value="LAP">
+						<input type="radio" name="asset_type_code" id="dot-2" value="RTR">
+						<input type="radio" name="asset_type_code" id="dot-3" value="PHN">
+						<input type="radio" name="asset_type_code" id="dot-4" value="CAM">
+						<input type="radio" name="asset_type_code" id="dot-5" value="KBD">
+						<input type="radio" name="asset_type_code" id="dot-6" value="TAB">
+						<input type="radio" name="asset_type_code" id="dot-7" value="MSE">
+						<span class="gender-title">IT Asset Type</span>
+						<div class="category">
+							<label for="dot-1">
+								<span class="dot one"></span>
+								<span class="gender">LAP</span>
+							</label>
+							<label for="dot-2">
+								<span class="dot two"></span>
+								<span class="gender">RTR</span>
+							</label>
+							<label for="dot-3">
+								<span class="dot three"></span>
+								<span class="gender">PHN</span>
+							</label>
+							<label for="dot-4">
+								<span class="dot four"></span>
+								<span class="gender">CAM</span>
+							</label>
+							<label for="dot-5">
+								<span class="dot five"></span>
+								<span class="gender">KBD</span>
+							</label>
+							<label for="dot-6">
+								<span class="dot six"></span>
+								<span class="gender">TAB</span>
+							</label>
+							<label for="dot-7">
+								<span class="dot seven"></span>
+								<span class="gender">MSE</span>
+							</label>
+						</div>
+					</div>
+					<div class="button">
+						<input type="submit" value="Register">
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+	<script src="~/js/AssetsAdd.js"></script>
+
+</body>
+</html>
+
